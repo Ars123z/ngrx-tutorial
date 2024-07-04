@@ -1,0 +1,12 @@
+@for (item of blogs; track item.id) {
+    <p>{{ item.id }}</p>
+    <p>{{ item.title }}</p>
+    <div>
+      <button (click)="onEdit(item.id)" class="btn btn-primary">Edit</button>
+      <button (click)="onDelete(item.id)" class="btn btn-primary">Delete</button>
+    </div>
+
+    <p>{{ item.description }}</p>
+  }
+
+<button (click)="onAdd()">Add Blog</button>
