@@ -9,7 +9,10 @@ import { Observable } from 'rxjs';
 export class MasterService {
 
   constructor(private http:HttpClient) {}
-
+  haveaccess() {
+    return true;
+  }
+  
   GetAllBlogs(): Observable<BlogModel[]> {
     return this.http.get<BlogModel[]>("http://localhost:3000/Blogs")
   }

@@ -1,12 +1,21 @@
-@for (item of blogs; track item.id) {
+<div *ngIf="!bloginfo.Errormessage">
+@for (item of bloginfo.bloglist; track item.id) {
     <p>{{ item.id }}</p>
     <p>{{ item.title }}</p>
+    <p>{{ item.description }}</p>
     <div>
       <button (click)="onEdit(item.id)" class="btn btn-primary">Edit</button>
       <button (click)="onDelete(item.id)" class="btn btn-primary">Delete</button>
     </div>
-
-    <p>{{ item.description }}</p>
-  }
-
+}
 <button (click)="onAdd()">Add Blog</button>
+</div>
+
+<div class="container" *ngIf="!bloginfo.bloglist.length">
+  <h1>No Blogs Found</h1>
+</div>
+
+
+<div *ngIf="bloginfo.Errormessage" class="container">
+<p class="text-danger">Error Occured: {{ bloginfo.Errormessage }}</p>
+</div>

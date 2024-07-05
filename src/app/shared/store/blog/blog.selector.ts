@@ -7,3 +7,7 @@ const getBlogState= createFeatureSelector<Blogs>('blog');
 export const getBlog= createSelector(getBlogState, (state)=>{
     return state.bloglist
 })
+
+export const getbloginfo= createSelector(getBlogState, (state)=>{
+    return state
+})
